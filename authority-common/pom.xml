@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>authority</artifactId>
+        <groupId>org.frog</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <packaging>pom</packaging>
+    <modules>
+        <module>authority-common-core</module>
+        <module>authority-common-swagger</module>
+        <module>authority-common-redis</module>
+        <module>authority-common-mybatis</module>
+        <module>authority-common-email</module>
+    </modules>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>authority-common</artifactId>
+
+    <properties>
+        <!-- api version -->
+        <knife4j-spring-boot.version>3.0.2</knife4j-spring-boot.version>
+        <swagger-annotations.version>1.6.2</swagger-annotations.version>
+
+        <!-- util version -->
+        <hutool-all.version>5.7.20</hutool-all.version>
+        <lombok.version>1.18.12</lombok.version>
+
+        <authority-common-core.version>1.0-SNAPSHOT</authority-common-core.version>
+        <authority-common-mybatis.version>1.0-SNAPSHOT</authority-common-mybatis.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.frog</groupId>
+                <artifactId>authority-common-core</artifactId>
+                <version>${authority-common-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.frog</groupId>
+                <artifactId>authority-common-mybatis</artifactId>
+                <version>${authority-common-mybatis.version}</version>
+            </dependency>
+
+            <!-- datasource -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper-spring-boot.version}</version>
+            </dependency>
+
+            <!--api-->
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger-annotations.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j-spring-boot.version}</version>
+            </dependency>
+
+            <!--utils-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

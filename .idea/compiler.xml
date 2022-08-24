@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="authority-common-email" />
+        <module name="authority-common-core" />
+        <module name="authority-common-mybatis" />
+        <module name="admin-api" />
+        <module name="authority-common-redis" />
+        <module name="authority-security" />
+        <module name="authority-business-system" />
+        <module name="authority-common-swagger" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
