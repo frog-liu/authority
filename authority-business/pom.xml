@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>authority</artifactId>
+        <groupId>org.frog</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>authority-business</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>authority-business-system</module>
+    </modules>
+
+    <properties>
+        <authority-admin.version>1.0-SNAPSHOT</authority-admin.version>
+        <authority-common.version>1.0-SNAPSHOT</authority-common.version>
+        <authority-security.version>1.0-SNAPSHOT</authority-security.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.frog</groupId>
+                <artifactId>admin-api</artifactId>
+                <version>${authority-admin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.frog</groupId>
+                <artifactId>authority-common-mybatis</artifactId>
+                <version>${authority-common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.frog</groupId>
+                <artifactId>authority-security</artifactId>
+                <version>${authority-security.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
