@@ -1,4 +1,4 @@
-package com.frog.authority.common.core.domain;
+package com.frog.authority.common.base.domain;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;

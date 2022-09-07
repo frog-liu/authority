@@ -1,4 +1,4 @@
-package com.frog.authority.common.core.exception;
+package com.frog.authority.common.base.exception;
 
 import lombok.NoArgsConstructor;
 

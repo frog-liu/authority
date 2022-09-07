@@ -1,6 +1,6 @@
 package com.frog.authority.security.config;
 
-import com.frog.authority.common.core.enums.ImageType;
+import com.frog.authority.common.base.enums.ImageType;
 import com.frog.authority.security.enums.CaptchaType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

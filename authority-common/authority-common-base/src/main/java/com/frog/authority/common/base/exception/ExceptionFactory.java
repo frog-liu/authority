@@ -1,6 +1,6 @@
-package com.frog.authority.common.core.exception;
+package com.frog.authority.common.base.exception;
 
-import com.frog.authority.common.core.enums.ExceptionType;
+import com.frog.authority.common.base.enums.ExceptionType;
 
 /**
  * 异常工厂类

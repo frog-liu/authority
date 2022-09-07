@@ -1,4 +1,4 @@
-package com.frog.authority.common.core.util;
+package com.frog.authority.common.base.util;
 
 /**
  * @author frog

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>authority-common-core</artifactId>
+    <artifactId>authority-common-base</artifactId>
 
     <dependencies>
 

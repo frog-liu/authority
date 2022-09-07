@@ -3,7 +3,7 @@ package com.frog.authority.business.system.domain;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.frog.authority.common.core.enums.StatusEnum;
+import com.frog.authority.common.base.enums.StatusEnum;
 import com.frog.authority.common.mybatis.domain.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

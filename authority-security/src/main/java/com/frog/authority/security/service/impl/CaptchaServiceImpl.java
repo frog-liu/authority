@@ -2,10 +2,10 @@ package com.frog.authority.security.service.impl;
 
 import cn.hutool.captcha.AbstractCaptcha;
 import cn.hutool.captcha.CaptchaUtil;
-import com.frog.authority.common.core.constant.RedisKey;
-import com.frog.authority.common.core.enums.ExceptionType;
-import com.frog.authority.common.core.enums.ImageType;
-import com.frog.authority.common.core.util.Assert;
+import com.frog.authority.common.base.constant.RedisKey;
+import com.frog.authority.common.base.enums.ExceptionType;
+import com.frog.authority.common.base.enums.ImageType;
+import com.frog.authority.common.base.util.Assert;
 import com.frog.authority.common.redis.util.RedisUtils;
 import com.frog.authority.security.config.CaptchaProperties;
 import com.frog.authority.security.constant.Message;

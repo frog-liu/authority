@@ -1,6 +1,6 @@
-package com.frog.authority.common.core.util;
+package com.frog.authority.common.base.util;
 
-import com.frog.authority.common.core.domain.TreeNode;
+import com.frog.authority.common.base.domain.TreeNode;
 import org.springframework.util.CollectionUtils;
 
 import java.util.List;

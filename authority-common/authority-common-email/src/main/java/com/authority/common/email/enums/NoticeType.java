@@ -1,8 +1,8 @@
 package com.authority.common.email.enums;
 
 import com.baomidou.mybatisplus.annotation.EnumValue;
-import com.frog.authority.common.core.enums.ExceptionType;
-import com.frog.authority.common.core.exception.ExceptionFactory;
+import com.frog.authority.common.base.enums.ExceptionType;
+import com.frog.authority.common.base.exception.ExceptionFactory;
 import lombok.Getter;
 
 /**

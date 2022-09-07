@@ -1,6 +1,6 @@
 package com.frog.authority.admin.api.dto;
 
-import com.frog.authority.common.core.enums.StatusEnum;
+import com.frog.authority.common.base.enums.StatusEnum;
 import lombok.Data;
 
 import java.io.Serializable;

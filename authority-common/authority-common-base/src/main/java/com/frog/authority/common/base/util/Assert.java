@@ -1,9 +1,9 @@
-package com.frog.authority.common.core.util;
+package com.frog.authority.common.base.util;
 
 import com.baomidou.mybatisplus.core.toolkit.ArrayUtils;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
-import com.frog.authority.common.core.enums.ExceptionType;
-import com.frog.authority.common.core.exception.ExceptionFactory;
+import com.frog.authority.common.base.enums.ExceptionType;
+import com.frog.authority.common.base.exception.ExceptionFactory;
 import org.springframework.util.CollectionUtils;
 
 import java.util.Collection;

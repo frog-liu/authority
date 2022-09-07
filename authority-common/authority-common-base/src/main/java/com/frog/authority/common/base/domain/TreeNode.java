@@ -1,6 +1,6 @@
-package com.frog.authority.common.core.domain;
+package com.frog.authority.common.base.domain;
 
-import com.frog.authority.common.core.util.TreeUtils;
+import com.frog.authority.common.base.util.TreeUtils;
 
 /**
  * 树类数据结构标志
@@ -11,7 +11,7 @@ public interface TreeNode {
 
     /**
      * 是否为最高级父类
-     * @return
+     * @return 是返回true,否则返回false
      */
     boolean isSuperParent();
 

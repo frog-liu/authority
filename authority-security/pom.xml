@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>org.frog</groupId>
-            <artifactId>authority-common-core</artifactId>
+            <artifactId>authority-common-base</artifactId>
             <version>${authority-common.version}</version>
         </dependency>
         <dependency>

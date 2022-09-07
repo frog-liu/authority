@@ -1,7 +1,7 @@
-package com.frog.authority.common.core.enums;
+package com.frog.authority.common.base.enums;
 
 import com.baomidou.mybatisplus.annotation.EnumValue;
-import com.frog.authority.common.core.exception.ExceptionFactory;
+import com.frog.authority.common.base.exception.ExceptionFactory;
 import lombok.Getter;
 
 /**
@@ -28,7 +28,7 @@ public enum SexEnum {
     ;
 
     @EnumValue
-    private Integer code;
+    private final Integer code;
 
     SexEnum(Integer code) {
         this.code = code;

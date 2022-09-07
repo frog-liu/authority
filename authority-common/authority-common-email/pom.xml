@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>org.frog</groupId>
-            <artifactId>authority-common-core</artifactId>
+            <artifactId>authority-common-base</artifactId>
         </dependency>
         <dependency>
             <groupId>org.frog</groupId>

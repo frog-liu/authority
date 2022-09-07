@@ -2,7 +2,7 @@ package com.frog.authority.business.system.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.frog.authority.business.system.domain.Role;
-import com.frog.authority.common.core.enums.StatusEnum;
+import com.frog.authority.common.base.enums.StatusEnum;
 
 import java.util.List;
 

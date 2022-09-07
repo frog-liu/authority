@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.frog.authority.business.system.domain.Role;
 import com.frog.authority.business.system.mapper.RoleMapper;
 import com.frog.authority.business.system.service.IRoleService;
-import com.frog.authority.common.core.enums.StatusEnum;
+import com.frog.authority.common.base.enums.StatusEnum;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

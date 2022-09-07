@@ -1,4 +1,4 @@
-package com.frog.authority.common.core.enums;
+package com.frog.authority.common.base.enums;
 
 /**
  * 图片类型

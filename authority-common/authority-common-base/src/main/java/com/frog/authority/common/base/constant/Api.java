@@ -1,4 +1,4 @@
-package com.frog.authority.common.core.constant;
+package com.frog.authority.common.base.constant;
 
 /**
  * api常量

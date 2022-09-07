@@ -3,7 +3,7 @@ package com.frog.authority.security.service.impl;
 import cn.hutool.core.util.ObjectUtil;
 import com.frog.authority.admin.api.UserFeignClient;
 import com.frog.authority.admin.api.dto.UserDTO;
-import com.frog.authority.common.core.domain.Result;
+import com.frog.authority.common.base.domain.Result;
 import com.frog.authority.security.domain.UserDetail;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

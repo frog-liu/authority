@@ -9,7 +9,7 @@
     </parent>
     <packaging>pom</packaging>
     <modules>
-        <module>authority-common-core</module>
+        <module>authority-common-base</module>
         <module>authority-common-swagger</module>
         <module>authority-common-redis</module>
         <module>authority-common-mybatis</module>
@@ -28,7 +28,7 @@
         <hutool-all.version>5.7.20</hutool-all.version>
         <lombok.version>1.18.12</lombok.version>
 
-        <authority-common-core.version>1.0-SNAPSHOT</authority-common-core.version>
+        <authority-common-base.version>1.0-SNAPSHOT</authority-common-base.version>
         <authority-common-mybatis.version>1.0-SNAPSHOT</authority-common-mybatis.version>
 
     </properties>
@@ -38,8 +38,8 @@
 
             <dependency>
                 <groupId>org.frog</groupId>
-                <artifactId>authority-common-core</artifactId>
-                <version>${authority-common-core.version}</version>
+                <artifactId>authority-common-base</artifactId>
+                <version>${authority-common-base.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.frog</groupId>

@@ -5,8 +5,8 @@ import com.authority.common.email.enums.NoticeType;
 import com.authority.common.email.mapper.EmailNoticeConfigMapper;
 import com.authority.common.email.service.IEmailNoticeConfigService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.frog.authority.common.core.enums.ExceptionType;
-import com.frog.authority.common.core.util.Assert;
+import com.frog.authority.common.base.enums.ExceptionType;
+import com.frog.authority.common.base.util.Assert;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
