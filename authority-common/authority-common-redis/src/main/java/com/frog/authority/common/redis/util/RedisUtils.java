@@ -35,7 +35,7 @@ public class RedisUtils {
      * @param unit 时间单位
      * @return 设置成功返回true,否则返回false
      */
-    public boolean expire(final String key, final long timeout, final TimeUnit unit) {
+    public Boolean expire(final String key, final long timeout, final TimeUnit unit) {
         return redisTemplate.expire(key, timeout, unit);
     }
 
@@ -44,7 +44,7 @@ public class RedisUtils {
      * @param key Redis键
      * @return 有效时间
      */
-    public long getExpire(final String key) {
+    public Long getExpire(final String key) {
         return redisTemplate.getExpire(key);
     }
 
@@ -92,7 +92,7 @@ public class RedisUtils {
      * @param key 删除键
      * @return 删除成功返回true,否则返回false
      */
-    public boolean delete(final String key) {
+    public Boolean delete(final String key) {
         return redisTemplate.delete(key);
     }
 
@@ -101,7 +101,7 @@ public class RedisUtils {
      * @param keys 删除键集合
      * @return 删除成功返回true,否则返回false
      */
-    public long delete(final Collection keys) {
+    public Long delete(final Collection<String> keys) {
         return redisTemplate.delete(keys);
     }
 

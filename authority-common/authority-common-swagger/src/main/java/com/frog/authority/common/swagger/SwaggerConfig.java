@@ -1,6 +1,7 @@
 package com.frog.authority.common.swagger;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
+import io.swagger.annotations.ApiOperation;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -25,11 +26,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ConfigurationProperties(prefix = "swagger-api.doc")
 @Import(BeanValidatorPluginsConfiguration.class)
 public class SwaggerConfig {
-
-    /**
-     * api文档生成源
-     */
-    private String basePackage;
 
     /**
      * 文档名称
@@ -60,7 +56,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo)
                                                       .groupName(name)
                                                       .select()
-                                                      .apis(RequestHandlerSelectors.basePackage(basePackage))
+                                                      .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
                                                       .paths(PathSelectors.any())
                                                       .build();
     }

@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>authority-business-system</module>
+        <module>authority-business-basic-info</module>
     </modules>
 
     <properties>

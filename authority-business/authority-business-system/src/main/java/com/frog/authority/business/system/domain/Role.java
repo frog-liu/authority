@@ -1,7 +1,5 @@
 package com.frog.authority.business.system.domain;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.frog.authority.common.base.enums.StatusEnum;
 import com.frog.authority.common.mybatis.domain.BaseEntity;
@@ -20,25 +18,22 @@ public class Role extends BaseEntity {
     /**
      * 角色id
      */
-    @TableId(type = IdType.AUTO)
+    @TableId
     private Long id;
 
     /**
      * 角色名称
      */
-    @TableField
     private String name;
 
     /**
      * 角色code
      */
-    @TableField
     private String code;
 
     /**
      * 角色状态
      */
-    @TableField("status")
     private StatusEnum status;
 
 }

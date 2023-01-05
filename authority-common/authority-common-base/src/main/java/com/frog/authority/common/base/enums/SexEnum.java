@@ -21,7 +21,7 @@ public enum SexEnum {
     MALE(1),
 
     /**
-     * 未知
+     * 保密
      */
     UN_KNOW(2),
 

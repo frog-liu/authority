@@ -15,6 +15,10 @@ public class Result<T> implements Serializable {
 
     private static final long serialVersionUID = -1675318165343472310L;
 
+    private static final String SUCCESS = "success";
+
+    private static final String FAIL = "fail";
+
     @ApiModelProperty("返回code")
     private final int code;
 
@@ -31,11 +35,11 @@ public class Result<T> implements Serializable {
     }
 
     public static<T> Result<T> ok(String message) {
-        return ok(message, (T) message);
+        return ok(message, (T)message);
     }
 
     public static<T> Result<T> ok(T body) {
-        return ok("success", body);
+        return ok(SUCCESS, body);
     }
 
     public static<T> Result<T> ok(String message, T body) {
@@ -43,11 +47,11 @@ public class Result<T> implements Serializable {
     }
 
     public static<T> Result<T> fail(String message) {
-        return fail(message, (T) message);
+        return fail(message, null);
     }
 
     public static<T> Result<T> fail(T body) {
-        return fail("fail", body);
+        return fail(FAIL, body);
     }
 
     public static<T> Result<T> fail(String message, T body) {

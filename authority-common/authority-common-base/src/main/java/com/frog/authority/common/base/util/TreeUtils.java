@@ -28,17 +28,16 @@ public class TreeUtils {
     }
 
     private static List<? extends TreeNode> listSuperParent(List<? extends TreeNode> treeNodeList) {
-        return treeNodeList.stream().filter(treeNode -> treeNode.isSuperParent()).collect(Collectors.toList());
+        return treeNodeList.stream().filter(TreeNode::isSuperParent).collect(Collectors.toList());
     }
 
-    private static TreeNode build(TreeNode parent, List<? extends TreeNode> treeNodeList) {
+    private static void build(TreeNode parent, List<? extends TreeNode> treeNodeList) {
         for (TreeNode treeNode: treeNodeList) {
             if (treeNode.getParentId().equals(parent.getId())) {
                 build(treeNode, treeNodeList);
                 parent.addChildren(treeNode);
             }
         }
-        return parent;
     }
 
 }

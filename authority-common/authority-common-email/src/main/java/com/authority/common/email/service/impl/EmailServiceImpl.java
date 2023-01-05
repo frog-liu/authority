@@ -5,6 +5,7 @@ import com.authority.common.email.domain.EmailNoticeConfig;
 import com.authority.common.email.enums.NoticeType;
 import com.authority.common.email.service.IEmailNoticeConfigService;
 import com.authority.common.email.service.IEmailService;
+import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,6 +17,7 @@ import org.springframework.util.CollectionUtils;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.File;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -29,6 +31,24 @@ public class EmailServiceImpl implements IEmailService {
     private final JavaMailSender mailSender;
 
     private final IEmailNoticeConfigService emailNoticeConfigService;
+
+    @Override
+    public void sendFile(NoticeType noticeType, String filePath) {
+        sendHtml(noticeType, StringPool.EMPTY, filePath);
+    }
+
+    @Override
+    public void sendFiles(NoticeType noticeType, Map<String, File> attachments) {
+        sendHtml(noticeType, StringPool.EMPTY, attachments);
+    }
+
+    @Override
+    public void sendHtml(NoticeType noticeType, String htmlText, String filePath) {
+        File file = new File(filePath);
+        Map<String, File> attachments = new HashMap<>();
+        attachments.put(file.getName(), file);
+        sendHtml(noticeType, htmlText, attachments);
+    }
 
     @Override
     public void sendHtml(NoticeType noticeType, String htmlText, Map<String, File> attachments) {

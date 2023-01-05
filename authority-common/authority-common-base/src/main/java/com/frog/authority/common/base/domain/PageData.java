@@ -29,10 +29,12 @@ public class PageData<T> implements Serializable {
     @ApiModelProperty(value = "返回数据")
     private List<T> records;
 
+    private PageData() {}
+
     public static<T> PageData<T> getInstance(List<T> list) {
-        PageData pageData = new PageData();
+        PageData<T> pageData = new PageData<>();
         pageData.setSize(list.size());
-        PageInfo pageInfo = new PageInfo(list);
+        PageInfo<T> pageInfo = new PageInfo<>(list);
         pageData.setTotal(pageInfo.getTotal());
         pageData.setPages(pageInfo.getPages());
         pageData.setRecords(list);

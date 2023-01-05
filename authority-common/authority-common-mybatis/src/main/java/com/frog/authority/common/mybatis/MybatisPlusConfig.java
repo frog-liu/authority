@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @author frog
- * @link https://baomidou.com/pages/2976a3/#mybatisplusinterceptor
+ * @link <a href="https://baomidou.com/pages/2976a3/#mybatisplusinterceptor">...</a>
  */
 @Configuration
 @MapperScan("com.frog.authority.**.mapper")

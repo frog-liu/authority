@@ -1,7 +1,5 @@
 package com.frog.authority.business.system.domain;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.frog.authority.common.base.enums.SexEnum;
 import com.frog.authority.common.base.enums.StatusEnum;
@@ -24,61 +22,52 @@ public class User extends BaseEntity {
     /**
      * 用户id
      */
-    @TableId(type = IdType.ASSIGN_ID)
+    @TableId
     private Long id;
 
     /**
      * 账号
      */
-    @TableField
     private String username;
 
     /**
      * 密码
      */
-    @TableField
     private String password;
 
     /**
-     * 用户密码
+     * 用户昵称
      */
-    @TableField
-    private String name;
+    private String nickName;
+
+    /**
+     * 部门id
+     */
+    private Long deptId;
 
     /**
      * 性别
      */
-    @TableField
     private SexEnum sex;
 
     /**
      * 手机号
      */
-    @TableField
     private String phone;
 
     /**
      * 邮箱
      */
-    @TableField
     private String email;
 
     /**
      * 头像
      */
-    @TableField
     private String avatar;
 
     /**
      * 状态
      */
-    @TableField("status")
     private StatusEnum status;
-
-    /**
-     * 角色列表
-     */
-    @TableField(exist = false)
-    private List<String> roleList;
 
 }

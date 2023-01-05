@@ -8,25 +8,20 @@ import java.time.LocalDateTime;
 
 /**
  * @author frog
- * @link https://baomidou.com/pages/4c6bcf/
+ * @link <a href="https://baomidou.com/pages/4c6bcf/">官网链接</a>
  */
 @Component
 public class MybatisMetaObjectHandler implements MetaObjectHandler {
-
-    /**
-     * 乐观锁初始版本: 0
-     */
-    private final Integer DEFAULT_VERSION = 0;
 
     @Override
     public void insertFill(MetaObject metaObject) {
         this.fillStrategy(metaObject, "createTime", LocalDateTime.now());
         this.fillStrategy(metaObject, "lastUpdateTime", LocalDateTime.now());
-        this.fillStrategy(metaObject, "version", DEFAULT_VERSION);
+        this.fillStrategy(metaObject, "version", 0);
     }
 
     @Override
     public void updateFill(MetaObject metaObject) {
-        this.fillStrategy(metaObject, "lastUpdateTime", LocalDateTime.now());
+        this.setFieldValByName("lastUpdateTime", LocalDateTime.now(), metaObject);
     }
 }

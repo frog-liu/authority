@@ -16,14 +16,31 @@ public class BaseEntity implements Serializable {
     private static final long serialVersionUID = 6522055280511275208L;
 
     /**
+     * 备注
+     */
+    private String remark;
+
+    /**
+     * 创建人id
+     */
+    @TableField(fill = FieldFill.INSERT)
+    private Long createBy;
+
+    /**
      * 创建时间
      */
-    @TableField(value = "create_time", fill = FieldFill.INSERT)
+    @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 
     /**
-     * 最近更新时间
+     * 最后更新人
      */
-    @TableField(value = "last_update_time", fill = FieldFill.INSERT_UPDATE)
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private Long lastUpdateBy;
+
+    /**
+     * 最后更新时间
+     */
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime lastUpdateTime;
 }
