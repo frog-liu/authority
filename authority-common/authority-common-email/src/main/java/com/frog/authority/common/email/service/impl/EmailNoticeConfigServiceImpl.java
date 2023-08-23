@@ -1,11 +1,11 @@
-package com.authority.common.email.service.impl;
+package com.frog.authority.common.email.service.impl;
 
-import com.authority.common.email.domain.EmailNoticeConfig;
-import com.authority.common.email.enums.NoticeType;
-import com.authority.common.email.mapper.EmailNoticeConfigMapper;
-import com.authority.common.email.service.IEmailNoticeConfigService;
+import com.frog.authority.common.base.exception.BusinessException;
+import com.frog.authority.common.email.domain.EmailNoticeConfig;
+import com.frog.authority.common.email.enums.NoticeType;
+import com.frog.authority.common.email.mapper.EmailNoticeConfigMapper;
+import com.frog.authority.common.email.service.IEmailNoticeConfigService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.frog.authority.common.base.enums.ExceptionType;
 import com.frog.authority.common.base.util.Assert;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,7 @@ public class EmailNoticeConfigServiceImpl extends ServiceImpl<EmailNoticeConfigM
 
     @Override
     public EmailNoticeConfig findByNoticeType(NoticeType type) {
-        Assert.notNull(ExceptionType.ILLEGAL_ARGUMENT, type, "邮件配置类型不能为空!");
+        Assert.notNull(BusinessException.class, type, "邮件配置类型不能为空!");
         return this.lambdaQuery()
                    .eq(EmailNoticeConfig::getNoticeType, type)
                    .one();

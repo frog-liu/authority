@@ -7,8 +7,6 @@ import com.frog.authority.common.mybatis.domain.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.util.List;
-
 /**
  * 用户 实体类
  * @author frog
@@ -28,7 +26,7 @@ public class User extends BaseEntity {
     /**
      * 账号
      */
-    private String username;
+    private String account;
 
     /**
      * 密码
@@ -61,7 +59,7 @@ public class User extends BaseEntity {
     private String email;
 
     /**
-     * 头像
+     * 头像地址
      */
     private String avatar;
 

@@ -1,7 +1,7 @@
-package com.authority.common.email.service;
+package com.frog.authority.common.email.service;
 
-import com.authority.common.email.domain.EmailNoticeConfig;
-import com.authority.common.email.enums.NoticeType;
+import com.frog.authority.common.email.domain.EmailNoticeConfig;
+import com.frog.authority.common.email.enums.NoticeType;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

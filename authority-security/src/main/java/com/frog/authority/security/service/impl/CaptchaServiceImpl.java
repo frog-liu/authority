@@ -3,8 +3,8 @@ package com.frog.authority.security.service.impl;
 import cn.hutool.captcha.AbstractCaptcha;
 import cn.hutool.captcha.CaptchaUtil;
 import com.frog.authority.common.base.constant.RedisKey;
-import com.frog.authority.common.base.enums.ExceptionType;
 import com.frog.authority.common.base.enums.ImageType;
+import com.frog.authority.common.base.exception.BusinessException;
 import com.frog.authority.common.base.util.Assert;
 import com.frog.authority.common.redis.util.RedisUtils;
 import com.frog.authority.security.config.CaptchaProperties;
@@ -43,7 +43,7 @@ public class CaptchaServiceImpl implements ICaptchaService {
     public void create(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // 获取前端生成的验证码key uuid并校验不能为空
         String captchaKey = request.getParameter(CAPTCHA_KEY);
-        Assert.notEmpty(ExceptionType.ILLEGAL_ARGUMENT, captchaKey, Message.Captcha.KEY_NOT_EMPTY);
+        Assert.notEmpty(BusinessException.class, captchaKey, Message.Captcha.KEY_NOT_EMPTY);
         // 根据验证码配置生成验证码
         setHeader(response, captchaProperties.getImageType());
         AbstractCaptcha captcha = createCaptcha(captchaProperties);
@@ -59,8 +59,8 @@ public class CaptchaServiceImpl implements ICaptchaService {
     public void check(HttpServletRequest request, HttpServletResponse response) {
         String captchaKey = request.getParameter(CAPTCHA_KEY);
         String captcha = request.getParameter(CAPTCHA);
-        Assert.notEmpty(ExceptionType.ILLEGAL_ARGUMENT, captchaKey, Message.Captcha.KEY_NOT_EMPTY);
-        Assert.notEmpty(ExceptionType.ILLEGAL_ARGUMENT, captcha,  Message.Captcha.NOT_EMPTY);
+        Assert.notEmpty(BusinessException.class, captchaKey, Message.Captcha.KEY_NOT_EMPTY);
+        Assert.notEmpty(BusinessException.class, captcha,  Message.Captcha.NOT_EMPTY);
 
         String rightCaptcha = String.valueOf(redisUtils.get(RedisKey.Captcha.KEY + captchaKey));
         if (StringUtils.isBlank(rightCaptcha)) {

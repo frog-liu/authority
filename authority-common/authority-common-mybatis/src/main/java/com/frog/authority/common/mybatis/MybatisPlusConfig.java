@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * MybatisPlus 配置
+ *
  * @author frog
  * @link <a href="https://baomidou.com/pages/2976a3/#mybatisplusinterceptor">...</a>
  */

@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 
 /**
+ * MybatisPlus 自动填充
+ *
  * @author frog
  * @link <a href="https://baomidou.com/pages/4c6bcf/">官网链接</a>
  */

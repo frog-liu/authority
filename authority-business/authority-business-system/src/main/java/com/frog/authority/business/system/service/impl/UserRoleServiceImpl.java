@@ -6,7 +6,6 @@ import com.frog.authority.business.system.domain.UserRole;
 import com.frog.authority.business.system.mapper.UserRoleMapper;
 import com.frog.authority.business.system.service.IRoleService;
 import com.frog.authority.business.system.service.IUserRoleService;
-import com.frog.authority.common.base.enums.ExceptionType;
 import com.frog.authority.common.base.enums.StatusEnum;
 import com.frog.authority.common.base.util.Assert;
 import com.sun.istack.internal.NotNull;
@@ -29,7 +28,7 @@ public class UserRoleServiceImpl extends ServiceImpl<UserRoleMapper, UserRole> i
 
     @Override
     public List<Role> listRoleByUserId(Long userId) {
-        Assert.notNull(ExceptionType.ILLEGAL_ARGUMENT, userId, "查询用户角色失败,用户id不能为空!");
+        Assert.notNull(userId, "查询用户角色失败,用户id不能为空!");
         List<UserRole> userRoleList = listByUserId(userId);
         List<Long> roleIdList = userRoleList.stream().map(UserRole::getRoleId).collect(Collectors.toList());
         return roleService.list(roleIdList, StatusEnum.VALID);

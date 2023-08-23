@@ -10,6 +10,8 @@ import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * redis操作工具类
+ *
  * @author frog
  */
 @Component

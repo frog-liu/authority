@@ -1,10 +1,10 @@
-package com.authority.common.email.service.impl;
+package com.frog.authority.common.email.service.impl;
 
 import cn.hutool.core.util.ObjectUtil;
-import com.authority.common.email.domain.EmailNoticeConfig;
-import com.authority.common.email.enums.NoticeType;
-import com.authority.common.email.service.IEmailNoticeConfigService;
-import com.authority.common.email.service.IEmailService;
+import com.frog.authority.common.email.domain.EmailNoticeConfig;
+import com.frog.authority.common.email.enums.NoticeType;
+import com.frog.authority.common.email.service.IEmailNoticeConfigService;
+import com.frog.authority.common.email.service.IEmailService;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import lombok.AllArgsConstructor;

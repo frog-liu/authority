@@ -1,10 +1,11 @@
 package com.frog.authority.common.base.enums;
 
 import com.baomidou.mybatisplus.annotation.EnumValue;
-import com.frog.authority.common.base.exception.ExceptionFactory;
 import lombok.Getter;
 
 /**
+ * 状态枚举类
+ *
  * @author frog
  */
 @Getter
@@ -19,11 +20,6 @@ public enum StatusEnum {
      * 有效
      */
     VALID(1),
-
-    /**
-     * 锁定
-     */
-    LOCKED(2),
 
     ;
 
@@ -44,6 +40,6 @@ public enum StatusEnum {
                 return status;
             }
         }
-        throw ExceptionFactory.ex(ExceptionType.ILLEGAL_ARGUMENT, "状态格式不正确:%s", code);
+        return null;
     }
 }

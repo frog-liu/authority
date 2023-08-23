@@ -1,4 +1,4 @@
-package com.frog.authority.common.base.domain;
+package com.frog.authority.common.base.model;
 
 import com.frog.authority.common.base.util.TreeUtils;
 

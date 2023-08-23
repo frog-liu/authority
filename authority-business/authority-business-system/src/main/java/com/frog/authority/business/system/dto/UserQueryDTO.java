@@ -19,8 +19,8 @@ public class UserQueryDTO implements Serializable {
     @ApiModelProperty("部门id列表")
     private Long deptId;
 
-    @ApiModelProperty("用户名称")
-    private String username;
+    @ApiModelProperty("账号")
+    private String account;
 
     @ApiModelProperty("用户昵称")
     private String nickName;

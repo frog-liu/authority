@@ -1,6 +1,6 @@
-package com.authority.common.email.domain;
+package com.frog.authority.common.email.domain;
 
-import com.authority.common.email.enums.NoticeType;
+import com.frog.authority.common.email.enums.NoticeType;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;

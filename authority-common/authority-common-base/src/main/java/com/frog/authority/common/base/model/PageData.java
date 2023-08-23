@@ -1,4 +1,4 @@
-package com.frog.authority.common.base.domain;
+package com.frog.authority.common.base.model;
 
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.ApiModel;
@@ -6,9 +6,12 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
 
 /**
+ * 分页信息
+ *
  * @author frog
  */
 @Data
@@ -27,17 +30,17 @@ public class PageData<T> implements Serializable {
     private long size;
 
     @ApiModelProperty(value = "返回数据")
-    private List<T> records;
+    private Collection<T> records;
 
     private PageData() {}
 
-    public static<T> PageData<T> getInstance(List<T> list) {
+    public static<T> PageData<T> getInstance(List<T> record) {
         PageData<T> pageData = new PageData<>();
-        pageData.setSize(list.size());
-        PageInfo<T> pageInfo = new PageInfo<>(list);
+        pageData.setSize(record.size());
+        PageInfo<T> pageInfo = new PageInfo<>(record);
         pageData.setTotal(pageInfo.getTotal());
         pageData.setPages(pageInfo.getPages());
-        pageData.setRecords(list);
+        pageData.setRecords(record);
         return pageData;
     }
 

@@ -2,7 +2,7 @@ package com.frog.authority.admin.api.fallback;
 
 import com.frog.authority.admin.api.UserFeignClient;
 import com.frog.authority.admin.api.dto.UserDTO;
-import com.frog.authority.common.base.domain.Result;
+import com.frog.authority.common.base.model.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

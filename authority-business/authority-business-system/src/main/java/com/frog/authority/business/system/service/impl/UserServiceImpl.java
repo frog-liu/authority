@@ -10,8 +10,8 @@ import com.frog.authority.business.system.domain.User;
 import com.frog.authority.business.system.mapper.UserMapper;
 import com.frog.authority.business.system.service.IUserService;
 import com.frog.authority.business.system.vo.UserManageVO;
-import com.frog.authority.common.base.enums.ExceptionType;
 import com.frog.authority.common.base.enums.StatusEnum;
+import com.frog.authority.common.base.exception.BusinessException;
 import com.frog.authority.common.base.util.Assert;
 import com.frog.authority.common.mybatis.util.PageUtils;
 import com.github.pagehelper.Page;
@@ -38,7 +38,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Override
     public List<UserManageVO> listUserManage(UserQueryDTO userQueryDTO) {
         Long deptId = userQueryDTO.getDeptId();
-        String username = userQueryDTO.getUsername();
+        String username = userQueryDTO.getAccount();
         String nickName = userQueryDTO.getNickName();
         String phone = userQueryDTO.getPhone();
         String email = userQueryDTO.getEmail();
@@ -48,7 +48,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         PageUtils.startPage();
         List<User> userList = this.lambdaQuery()
                                   .eq(ObjectUtil.isNotNull(deptId), User::getDeptId,deptId)
-                                  .like(StringUtils.hasLength(username), User::getUsername, username)
+                                  .like(StringUtils.hasLength(username), User::getAccount, username)
                                   .like(StringUtils.hasLength(nickName), User::getNickName, nickName)
                                   .like(StringUtils.hasLength(phone), User::getPhone, phone)
                                   .like(StringUtils.hasLength(email), User::getEmail, email)
@@ -70,15 +70,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
     @Override
     public User findByUsername(String username) {
-        Assert.notEmpty(ExceptionType.ILLEGAL_ARGUMENT, username, Message.User.USERNAME_NOT_EMPTY);
-        User user = this.lambdaQuery().eq(User::getUsername, username).one();
+        Assert.notEmpty(BusinessException.class, username, Message.User.USERNAME_NOT_EMPTY);
+        User user = this.lambdaQuery().eq(User::getAccount, username).one();
         fillRole(user);
         return user;
     }
 
     @Override
     public User findByEmail(String email) {
-        Assert.notEmpty(ExceptionType.ILLEGAL_ARGUMENT, email, Message.User.EMAIL_NOT_EMPTY);
+        Assert.notEmpty(BusinessException.class, email, Message.User.EMAIL_NOT_EMPTY);
         User user = this.lambdaQuery().eq(User::getEmail, email).one();
         fillRole(user);
         return user;

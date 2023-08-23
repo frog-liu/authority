@@ -1,8 +1,6 @@
-package com.authority.common.email.enums;
+package com.frog.authority.common.email.enums;
 
 import com.baomidou.mybatisplus.annotation.EnumValue;
-import com.frog.authority.common.base.enums.ExceptionType;
-import com.frog.authority.common.base.exception.ExceptionFactory;
 import lombok.Getter;
 
 /**
@@ -24,16 +22,17 @@ public enum NoticeType {
         this.desc = desc;
     }
 
+    public boolean matches(String code) {
+        return this.code.equals(code);
+    }
+
     public static NoticeType findByCode(String code) {
         for (NoticeType noticeType: NoticeType.values()) {
             if (noticeType.matches(code)) {
                 return noticeType;
             }
         }
-        throw ExceptionFactory.ex(ExceptionType.ILLEGAL_ARGUMENT, "通知类型[%s]格式错误", code);
+        return null;
     }
 
-    public boolean matches(String code) {
-        return this.code.equals(code);
-    }
 }

@@ -1,6 +1,6 @@
-package com.authority.common.email.mapper;
+package com.frog.authority.common.email.mapper;
 
-import com.authority.common.email.domain.EmailNoticeConfig;
+import com.frog.authority.common.email.domain.EmailNoticeConfig;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

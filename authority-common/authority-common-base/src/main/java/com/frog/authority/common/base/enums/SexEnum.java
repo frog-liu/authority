@@ -1,10 +1,11 @@
 package com.frog.authority.common.base.enums;
 
 import com.baomidou.mybatisplus.annotation.EnumValue;
-import com.frog.authority.common.base.exception.ExceptionFactory;
 import lombok.Getter;
 
 /**
+ * 性别枚举类
+ *
  * @author frog
  */
 @Getter
@@ -44,6 +45,6 @@ public enum SexEnum {
                 return status;
             }
         }
-        throw ExceptionFactory.ex(ExceptionType.ILLEGAL_ARGUMENT, "性别格式不正确:%s", code);
+        return null;
     }
 }
