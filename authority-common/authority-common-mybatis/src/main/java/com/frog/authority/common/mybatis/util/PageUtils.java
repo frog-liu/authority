@@ -4,7 +4,9 @@ import com.frog.authority.common.base.util.RequestUtils;
 import com.github.pagehelper.PageHelper;
 
 /**
- * @author liuhuan
+ * 数据库分页工具类
+ *
+ * @author frog
  */
 public class PageUtils {
 
@@ -19,18 +21,18 @@ public class PageUtils {
     public static final String PAGE_SIZE = "pageSize";
 
     public static void startPage() {
-        Integer pageNum = RequestUtils.getInteger(PAGE_NUM);
-        Integer pageSize = RequestUtils.getInteger(PAGE_SIZE);
+        Integer pageNum = getPageNum();
+        Integer pageSize = getPageSize();
         if (pageNum != null && pageSize != null) {
             PageHelper.startPage(pageNum, pageSize);
         }
     }
 
     public static Integer getPageNum() {
-        return RequestUtils.getInteger(PAGE_NUM);
+        return RequestUtils.getIntegerParam(PAGE_NUM);
     }
 
     public static Integer getPageSize() {
-        return RequestUtils.getInteger(PAGE_SIZE);
+        return RequestUtils.getIntegerParam(PAGE_SIZE);
     }
 }

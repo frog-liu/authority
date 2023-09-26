@@ -8,11 +8,19 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 
 /**
+ * 请求工具类
+ *
  * @author frog
  */
 public class RequestUtils {
 
-    public static Integer getInteger(String param) {
+    /**
+     * 获取Integer类型请求参数
+     *
+     * @param param  参数名
+     * @return 参数值
+     */
+    public static Integer getIntegerParam(String param) {
         String value = getRequest().getParameter(param);
         if (!StringUtils.isEmpty(value)) {
             try {
@@ -24,7 +32,7 @@ public class RequestUtils {
         return null;
     }
 
-    private static HttpServletRequest getRequest() {
+    public static HttpServletRequest getRequest() {
         return getRequestAttributes().getRequest();
     }
 

@@ -21,6 +21,9 @@
     <artifactId>authority-common</artifactId>
 
     <properties>
+
+        <redisson.version>3.15.6</redisson.version>
+
         <!-- api version -->
         <knife4j-spring-boot.version>3.0.2</knife4j-spring-boot.version>
         <swagger-annotations.version>1.6.2</swagger-annotations.version>
@@ -31,6 +34,7 @@
 
         <authority-common-base.version>1.0-SNAPSHOT</authority-common-base.version>
         <authority-common-mybatis.version>1.0-SNAPSHOT</authority-common-mybatis.version>
+        <authority-security.version>1.0-SNAPSHOT</authority-security.version>
 
     </properties>
 
@@ -46,6 +50,11 @@
                 <groupId>org.frog</groupId>
                 <artifactId>authority-common-mybatis</artifactId>
                 <version>${authority-common-mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.frog</groupId>
+                <artifactId>authority-security</artifactId>
+                <version>${authority-security.version}</version>
             </dependency>
 
             <!-- datasource -->
@@ -63,6 +72,11 @@
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pagehelper-spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
             </dependency>
 
             <!--api-->

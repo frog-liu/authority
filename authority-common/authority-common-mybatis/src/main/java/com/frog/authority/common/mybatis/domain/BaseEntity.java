@@ -18,7 +18,7 @@ public class BaseEntity implements Serializable {
     private static final long serialVersionUID = 6522055280511275208L;
 
     /**
-     * 创建人id
+     * 创建人ID
      */
     @TableField(fill = FieldFill.INSERT)
     private Long createBy;
@@ -30,13 +30,13 @@ public class BaseEntity implements Serializable {
     private LocalDateTime createTime;
 
     /**
-     * 最近一次更新人
+     * 最后一次更新人ID
      */
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private Long lastUpdateBy;
 
     /**
-     * 最近一次更新时间
+     * 最后一次更新时间
      */
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime lastUpdateTime;
