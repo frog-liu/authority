@@ -7,35 +7,52 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @author frog
+ * 树状数据结构工具类
+ *
+ * @author liuhuan
  */
 public class TreeUtils {
 
     /**
      * 构建树状结构
-     * @param treeNodeList 所有节点
-     * @return 构建后的list
+     *
+     * @param nodeList 所有节点
+     * @return 构建后节点集合
      */
-    public static List<? extends TreeNode> build(List<? extends TreeNode> treeNodeList) {
-        if (!CollectionUtils.isEmpty(treeNodeList)) {
-            List<? extends TreeNode> superParentList = listSuperParent(treeNodeList);
-            for (TreeNode superParent: superParentList) {
-                build(superParent, treeNodeList);
+    public static List<? extends TreeNode> build(List<? extends TreeNode> nodeList) {
+        if (!CollectionUtils.isEmpty(nodeList)) {
+            List<? extends TreeNode> rootList = listRoot(nodeList);
+            for (TreeNode root: rootList) {
+                build(root, nodeList, 1);
             }
-            return superParentList;
+            return rootList;
         }
-        return treeNodeList;
+        return nodeList;
     }
 
-    private static List<? extends TreeNode> listSuperParent(List<? extends TreeNode> treeNodeList) {
-        return treeNodeList.stream().filter(TreeNode::isSuperParent).collect(Collectors.toList());
+    /**
+     * 筛选出所有根节点
+     *
+     * @param nodeList 所有节点
+     * @return 所有根节点
+     */
+    private static List<? extends TreeNode> listRoot(List<? extends TreeNode> nodeList) {
+        return nodeList.stream().filter(TreeNode::isRoot).collect(Collectors.toList());
     }
 
-    private static void build(TreeNode parent, List<? extends TreeNode> treeNodeList) {
-        for (TreeNode treeNode: treeNodeList) {
-            if (treeNode.getParentId().equals(parent.getId())) {
-                build(treeNode, treeNodeList);
-                parent.addChildren(treeNode);
+    /**
+     * 最大递归深度
+     */
+    private static final int MAX_DEPTH = 100;
+
+    private static void build(TreeNode parent, List<? extends TreeNode> nodeList, int rd) {
+        if (rd > MAX_DEPTH) {
+            throw new RuntimeException("递归深度过大!");
+        }
+        for (TreeNode node : nodeList) {
+            if (node.getParentId().equals(parent.getId())) {
+                build(node, nodeList, rd + 1);
+                parent.addChild(node);
             }
         }
     }

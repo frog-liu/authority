@@ -1,6 +1,6 @@
 package com.frog.authority.business.system.dto;
 
-import com.frog.authority.common.base.enums.StatusEnum;
+import com.frog.authority.common.base.enums.ValidityStatus;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -32,7 +32,7 @@ public class UserQueryDTO implements Serializable {
     private String email;
 
     @ApiModelProperty("状态")
-    private StatusEnum status;
+    private ValidityStatus status;
 
     @ApiModelProperty("创建时间-开始")
     private LocalDateTime beginTime;

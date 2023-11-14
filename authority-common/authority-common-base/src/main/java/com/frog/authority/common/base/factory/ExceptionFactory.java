@@ -1,4 +1,4 @@
-package com.frog.authority.common.base.exception;
+package com.frog.authority.common.base.factory;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -12,8 +12,13 @@ import java.lang.reflect.Constructor;
 @Slf4j
 public class ExceptionFactory {
 
+    public static void main(String[] args) {
+        System.out.println(String.format("ExceptionFactory ex NoSuchMethodException", args));
+    }
+
     /**
      * 按照异常类型创建异常
+     *
      * @param clazz 异常类型
      * @param message 异常信息
      * @param args 异常参数

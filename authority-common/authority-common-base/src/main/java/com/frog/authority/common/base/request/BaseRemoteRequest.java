@@ -14,10 +14,10 @@ import java.io.Serializable;
 @Data
 public class BaseRemoteRequest implements Serializable {
 
-    private static final long serialVersionUID = 5830127583417315749L;
+    private static final long serialVersionUID = 1L;
 
     @NotNull(message = "请求id不能为空!")
-    @ApiModelProperty(value = "请求id", required = true)
+    @ApiModelProperty(value = "请求唯一id", required = true)
     private Long requestId;
 
 }

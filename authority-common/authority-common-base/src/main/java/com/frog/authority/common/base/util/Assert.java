@@ -3,7 +3,7 @@ package com.frog.authority.common.base.util;
 import com.baomidou.mybatisplus.core.toolkit.ArrayUtils;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.frog.authority.common.base.exception.BusinessException;
-import com.frog.authority.common.base.exception.ExceptionFactory;
+import com.frog.authority.common.base.factory.ExceptionFactory;
 import org.springframework.util.CollectionUtils;
 
 import java.util.Collection;
@@ -161,7 +161,8 @@ public final class Assert {
     /**
      * 断言这个 数组 不为 empty
      * <p>为 empty 则抛异常</p>
-     * @param type 异常类型
+     *
+     * @param exClass 异常类型
      * @param array   数组
      * @param message 消息
      */

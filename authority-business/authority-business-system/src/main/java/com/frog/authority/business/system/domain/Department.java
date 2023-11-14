@@ -1,7 +1,7 @@
 package com.frog.authority.business.system.domain;
 
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.frog.authority.common.base.enums.StatusEnum;
+import com.frog.authority.common.base.enums.ValidityStatus;
 import com.frog.authority.common.mybatis.domain.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -40,6 +40,6 @@ public class Department extends BaseEntity {
     /**
      * 状态
      */
-    private StatusEnum status;
+    private ValidityStatus status;
 
 }

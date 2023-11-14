@@ -1,6 +1,6 @@
 package com.frog.authority.admin.api.dto;
 
-import com.frog.authority.common.base.enums.StatusEnum;
+import com.frog.authority.common.base.enums.ValidityStatus;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -27,7 +27,7 @@ public class UserDTO implements Serializable {
     /**
      * 状态
      */
-    private StatusEnum status;
+    private ValidityStatus status;
 
     /**
      * 角色列表

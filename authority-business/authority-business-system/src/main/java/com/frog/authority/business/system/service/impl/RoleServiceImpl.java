@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.frog.authority.business.system.domain.Role;
 import com.frog.authority.business.system.mapper.RoleMapper;
 import com.frog.authority.business.system.service.IRoleService;
-import com.frog.authority.common.base.enums.StatusEnum;
+import com.frog.authority.common.base.enums.ValidityStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.List;
 public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IRoleService {
 
     @Override
-    public List<Role> list(List<Long> roleIdList, StatusEnum status) {
+    public List<Role> list(List<Long> roleIdList, ValidityStatus status) {
         return this.lambdaQuery()
                    .in(Role::getId, roleIdList)
                    .eq(ObjectUtil.isNotNull(status), Role::getStatus, status)

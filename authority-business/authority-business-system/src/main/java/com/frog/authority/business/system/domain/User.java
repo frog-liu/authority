@@ -1,8 +1,8 @@
 package com.frog.authority.business.system.domain;
 
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.frog.authority.common.base.enums.SexEnum;
-import com.frog.authority.common.base.enums.StatusEnum;
+import com.frog.authority.common.base.enums.GenderEnum;
+import com.frog.authority.common.base.enums.ValidityStatus;
 import com.frog.authority.common.mybatis.domain.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -46,7 +46,7 @@ public class User extends BaseEntity {
     /**
      * 性别
      */
-    private SexEnum sex;
+    private GenderEnum sex;
 
     /**
      * 手机号
@@ -66,6 +66,6 @@ public class User extends BaseEntity {
     /**
      * 状态
      */
-    private StatusEnum status;
+    private ValidityStatus status;
 
 }

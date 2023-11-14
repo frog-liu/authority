@@ -10,7 +10,7 @@ import com.frog.authority.business.system.domain.User;
 import com.frog.authority.business.system.mapper.UserMapper;
 import com.frog.authority.business.system.service.IUserService;
 import com.frog.authority.business.system.vo.UserManageVO;
-import com.frog.authority.common.base.enums.StatusEnum;
+import com.frog.authority.common.base.enums.ValidityStatus;
 import com.frog.authority.common.base.exception.BusinessException;
 import com.frog.authority.common.base.util.Assert;
 import com.frog.authority.common.mybatis.util.PageUtils;
@@ -42,7 +42,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         String nickName = userQueryDTO.getNickName();
         String phone = userQueryDTO.getPhone();
         String email = userQueryDTO.getEmail();
-        StatusEnum status = userQueryDTO.getStatus();
+        ValidityStatus status = userQueryDTO.getStatus();
         LocalDateTime beginTime = userQueryDTO.getBeginTime();
         LocalDateTime endTime = userQueryDTO.getEndTime();
         PageUtils.startPage();

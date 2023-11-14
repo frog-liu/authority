@@ -1,7 +1,7 @@
 package com.frog.authority.security.domain;
 
 import com.frog.authority.admin.api.dto.UserDTO;
-import com.frog.authority.common.base.enums.StatusEnum;
+import com.frog.authority.common.base.enums.ValidityStatus;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -30,8 +30,7 @@ public class UserDetail implements UserDetails {
     public UserDetail(UserDTO user) {
         this.username = user.getUsername();
         this.password = user.getPassword();
-        this.enabled = StatusEnum.VALID.equals(user.getStatus());
-        this.accountNonLocked = !StatusEnum.LOCKED.equals(user.getStatus());
+        this.enabled = ValidityStatus.VALID.equals(user.getStatus());
         if (!CollectionUtils.isEmpty(user.getRoleList())) {
             authorities = new ArrayList<>(user.getRoleList().size());
             user.getRoleList().forEach(roleCode -> authorities.add(new SimpleGrantedAuthority(roleCode)));

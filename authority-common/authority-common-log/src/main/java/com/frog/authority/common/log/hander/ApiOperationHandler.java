@@ -5,8 +5,6 @@ import com.baomidou.mybatisplus.core.toolkit.ArrayUtils;
 import com.frog.authority.common.base.util.RequestUtils;
 import io.swagger.annotations.ApiOperation;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.reflect.MethodSignature;
-import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.http.HttpMethod;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.multipart.MultipartFile;
@@ -16,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Collection;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * ApiOperation处理器接口
@@ -29,25 +26,11 @@ public interface ApiOperationHandler {
      * 处理joinPoint
      *
      * @param joinPoint 切入点
+     * @param apiOperation ApiOperation
      * @return 执行结果
      * @throws Throwable 异常
      */
-    Object handle(ProceedingJoinPoint joinPoint) throws Throwable;
-
-    /**
-     * 获取ApiOperation注解
-     *
-     * @param joinPoint 切入点
-     * @return ApiOperation对象
-     */
-    default ApiOperation getApiOperation(ProceedingJoinPoint joinPoint) {
-        MethodSignature signature = (MethodSignature) joinPoint.getSignature();
-        ApiOperation apiOperation = AnnotationUtils.findAnnotation(signature.getMethod(), ApiOperation.class);
-        if (Objects.nonNull(apiOperation)) {
-            return apiOperation;
-        }
-        return AnnotationUtils.findAnnotation(signature.getDeclaringType(), ApiOperation.class);
-    }
+    Object handle(ProceedingJoinPoint joinPoint, ApiOperation apiOperation) throws Throwable;
 
     /**
      * 获取请求参数并转为JSON字符串

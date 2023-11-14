@@ -1,5 +1,6 @@
 package com.frog.authority.common.log.hander;
 
+import io.swagger.annotations.ApiOperation;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,10 +22,10 @@ public class ApiOperationHandlerChain {
         this.handlers = handlers;
     }
 
-    public Object handle(ProceedingJoinPoint joinPoint) throws Throwable {
+    public Object handle(ProceedingJoinPoint joinPoint, ApiOperation apiOperation) throws Throwable {
         Object result = null;
         for (ApiOperationHandler handler : handlers) {
-            result = handler.handle(joinPoint);
+            result = handler.handle(joinPoint, apiOperation);
             if (result != null) {
                 break;
             }

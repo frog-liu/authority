@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
  * MybatisPlus 自动填充
  *
  * @author frog
- * @link <a href="https://baomidou.com/pages/4c6bcf/">官网链接</a>
+ * @link <a href="https://baomidou.com/pages/4c6bcf/">自动填充</a>
  */
 @Component
 public class MybatisMetaObjectHandler implements MetaObjectHandler {
@@ -35,8 +35,8 @@ public class MybatisMetaObjectHandler implements MetaObjectHandler {
      */
     @Override
     public void updateFill(MetaObject metaObject) {
-        this.fillStrategy(metaObject, "lastUpdateBy", SecurityUtils.getCurrentUserId());
-        this.fillStrategy(metaObject, "lastUpdateTime", LocalDateTime.now());
+        this.setFieldValByName("lastUpdateBy", SecurityUtils.getCurrentUserId(), metaObject);
+        this.setFieldValByName("lastUpdateTime", LocalDateTime.now(), metaObject);
     }
 
 }

@@ -4,7 +4,6 @@ import com.frog.authority.business.system.constant.ApiUrl;
 import com.frog.authority.business.system.dto.UserQueryDTO;
 import com.frog.authority.business.system.service.IUserService;
 import com.frog.authority.business.system.vo.UserManageVO;
-import com.frog.authority.common.base.controller.BaseController;
 import com.frog.authority.common.base.model.PageData;
 import com.frog.authority.common.base.model.Result;
 import io.swagger.annotations.Api;
@@ -23,7 +22,7 @@ import java.util.List;
 @RestController
 @Api(value = ApiUrl.USER, tags = "用户信息")
 @RequestMapping(ApiUrl.USER)
-public class UserController extends BaseController {
+public class UserController {
 
     @Resource
     private IUserService userService;

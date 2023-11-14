@@ -1,8 +1,9 @@
 package com.frog.authority.common.log.hander;
 
 import com.frog.authority.common.base.exception.DuplicateRequestException;
-import com.frog.authority.common.base.exception.ExceptionFactory;
+import com.frog.authority.common.base.factory.ExceptionFactory;
 import com.frog.authority.common.base.request.BaseRemoteRequest;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.redisson.api.RBloomFilter;
@@ -26,7 +27,7 @@ public class DuplicateRequestHandler implements ApiOperationHandler {
     /**
      * 定义 Redis 布隆过滤器的名称
      */
-    private static final String BLOOM_FILTER_NAME = "remote-request:bloom-filter";
+    private static final String BLOOM_FILTER_NAME = "BF:Remote-Req";
 
     @Resource
     private RedissonClient redissonClient;
@@ -43,7 +44,7 @@ public class DuplicateRequestHandler implements ApiOperationHandler {
     }
 
     @Override
-    public Object handle(ProceedingJoinPoint joinPoint) {
+    public Object handle(ProceedingJoinPoint joinPoint, ApiOperation apiOperation) {
         BaseRemoteRequest baseRemoteRequest = getBaseRemoteRequest(joinPoint);
         if (baseRemoteRequest != null) {
             Long requestId = baseRemoteRequest.getRequestId();
