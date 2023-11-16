@@ -2,7 +2,6 @@ package com.frog.authority.common.base.factory;
 
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import org.springframework.util.StringUtils;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;

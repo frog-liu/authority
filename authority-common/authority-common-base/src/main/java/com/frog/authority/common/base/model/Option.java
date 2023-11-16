@@ -5,7 +5,6 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
 
 /**
  * html <option>标签</option>
@@ -15,7 +14,7 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @ApiModel("<option>标签")
-public class Option<T> implements Serializable {
+public class Option<T> {
 
     private static final long serialVersionUID = -1L;
 

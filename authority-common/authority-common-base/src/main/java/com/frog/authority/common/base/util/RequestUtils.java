@@ -1,5 +1,6 @@
 package com.frog.authority.common.base.util;
 
+import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import org.springframework.util.StringUtils;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -40,6 +41,16 @@ public class RequestUtils {
      */
     public static HttpServletRequest getRequest() {
         return getRequestAttributes().getRequest();
+    }
+
+    /**
+     * 获取当前请求url
+     *
+     * @return 当前请求url
+     */
+    public static String getRequestUrl() {
+        HttpServletRequest request = getRequest();
+        return request == null ? StringPool.EMPTY : request.getRequestURI();
     }
 
     /**

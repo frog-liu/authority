@@ -3,6 +3,7 @@ package com.frog.authority.common.base.model;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
@@ -13,16 +14,15 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @ApiModel("<option>增强标签")
-public class EnhancedOption<T, D> extends Option<T> {
+@EqualsAndHashCode(callSuper = true)
+public class EnhancedOption<T, M> extends Option<T> {
 
-    private static final long serialVersionUID = -1L;
-
-    public EnhancedOption(T value, String label, D data) {
+    public EnhancedOption(T value, String label, M data) {
         super(value, label);
         this.data = data;
     }
 
     @ApiModelProperty("附件data")
-    private D data;
+    private M data;
 
 }

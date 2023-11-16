@@ -37,7 +37,7 @@
         <authority-common-base.version>1.0-SNAPSHOT</authority-common-base.version>
         <authority-common-mybatis.version>1.0-SNAPSHOT</authority-common-mybatis.version>
         <authority-security.version>1.0-SNAPSHOT</authority-security.version>
-
+        <fastjson.version>1.2.79</fastjson.version>
     </properties>
 
     <dependencyManagement>
@@ -113,6 +113,11 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>easyexcel</artifactId>
                 <version>${easy-excel.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

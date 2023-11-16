@@ -12,10 +12,6 @@ import java.lang.reflect.Constructor;
 @Slf4j
 public class ExceptionFactory {
 
-    public static void main(String[] args) {
-        System.out.println(String.format("ExceptionFactory ex NoSuchMethodException", args));
-    }
-
     /**
      * 按照异常类型创建异常
      *
